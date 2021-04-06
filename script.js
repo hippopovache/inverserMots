@@ -1,6 +1,7 @@
-const inverser(text) {
+function inverser(text) {
     const words = text.split(' ');
-    return words.reverse() + '.';
+    const wordsRevesed = words.reverse();
+    return wordsRevesed.join(' ');
 }
 
 $(document).ready(function() {
