@@ -6,6 +6,7 @@ function invert(text) {
     return wordsRevesed.join(' ');
 }
 
+let count = 0;
 function start() {
     $('#error').html();
     let text = $('#text').val().trim();
@@ -16,12 +17,15 @@ function start() {
     if ((isDot | text.split(' ').length > 0) && source.length > 0) result = invert(text) + '.';
 
     if (result) {
+        count++;
         $('#text').val('');
         const div = $('div');
-        $('#result').append(`<div>${source}<span class="px-5">|</span>${result}</div>`);
+        $('#result').append(`<tr><td class="text-right px-3">${source}</td><td>${result}</td></tr>`);
         $('#result div:last').hide().fadeIn();
     }
-    else $('#result').append(`<div class="text-danger">${source}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;format invalide...</div>`);
+    else $('#result').append(`<tr><td class="text-danger text-right px-3">${source}</td><td class="text-danger">format invalide...</tr><td>`);
+
+    $('#selenium').html(`${count} tests effectués avec succès.`).css({ opacity: 0 }).animate(({ opacity: 1 }));
 }
 
 $(document).ready(function() {

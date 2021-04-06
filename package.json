@@ -1,0 +1,23 @@
+{
+  "name": "code-qualite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "get-orders.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "colors": "^1.4.0",
+    "ejs": "^3.1.6",
+    "event-stream": "^4.0.1",
+    "express": "^4.17.1",
+    "faker": "^5.4.0",
+    "mysql": "^2.18.1",
+    "selenium": "^2.20.0",
+    "selenium-webdriver": "^4.0.0-beta.1"
+  }
+}
