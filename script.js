@@ -15,10 +15,10 @@ function start() {
     } else if (isDot > 0) {
         text = text.replace('.', '');
         result = inverser(text) + '.';
+        $('#text').val('');
     }
-    if (result) $('#result').html(result);
-    else $('#result').html('<div class="text-danger">format invalide...</div>');
-    $('#text').val('');
+    if (result) $('#result').hide().html(result).fadeIn();
+    else $('#result').hide().html('<div class="text-danger">format invalide...</div>').fadeIn();
 }
 
 $(document).ready(function() {
