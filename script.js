@@ -1,9 +1,12 @@
 function inverser(text) {
     const words = text.split(' ');
-    console.log(words)
-    const wordsRevesed = words.reverse();
-    console.log(wordsRevesed)
-    return wordsRevesed.join(' ');
+    if (words.length <= 2) {
+        console.log(words)
+        const wordsRevesed = words.reverse();
+        console.log(wordsRevesed)
+        return wordsRevesed.join(' ');
+    }
+    return null;
 }
 
 $(document).ready(function() {
