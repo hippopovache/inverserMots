@@ -1,24 +1,34 @@
 function inverser(text) {
     const words = text.split(' ');
-    if (words.length <= 2) {
-        console.log(words)
-        const wordsRevesed = words.reverse();
-        console.log(wordsRevesed)
-        return wordsRevesed.join(' ');
+    console.log(words)
+    const wordsRevesed = words.reverse();
+    console.log(wordsRevesed)
+    return wordsRevesed.join(' ');
+}
+
+function start() {
+    let text = $('#text').val().trim();
+    const isDot = text.indexOf('.');
+    let result;
+    if (text === '.') {
+        result = '.';
+    } else if (isDot > 0) {
+        text = text.replace('.', '');
+        result = inverser(text) + '.';
     }
-    return null;
+    if (result) $('#result').html(result);
+    else $('#result').html('<div class="text-danger">format invalide...</div>');
+    $('#text').val('');
 }
 
 $(document).ready(function() {
-    $(document).on('click', '#btn', function() {
-        let text = $('#text').val().trim();
-        const isDot = text.indexOf('.');
-        let result;
-        if (isDot > 0) {
-            text = text.replace('.', '');
-            result = inverser(text);
+    $(document).on("keyup", "input", function (e) {
+        if(e.which == 13) {
+            start();
         }
-        if (result) $('#result').html(result + '.');
-        else $('#result').html('<div class="text-danger">format invalide...</div>');
+    });
+
+    $(document).on('click', '#btn', function() {
+        start();
     });
 });
