@@ -19,5 +19,6 @@ $(document).ready(function() {
             result = inverser(text);
         }
         if (result) $('#result').html(result + '.');
+        else $('#result').html('<div class="text-danger">format invalide...</div>');
     });
 });
