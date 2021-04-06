@@ -13,7 +13,7 @@ function start() {
     let result, source = $('#text').val();
 
     text = text.replace('.', '');
-    if (text.split(' ').length > 0 ) result = invert(text) + '.';
+    if ((isDot | text.split(' ').length > 0) && source.length > 0) result = invert(text) + '.';
 
     if (result) {
         $('#text').val('');
