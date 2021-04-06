@@ -11,17 +11,14 @@ function start() {
     let text = $('#text').val().trim();
     const isDot = text.indexOf('.');
     let result, source = $('#text').val();
-    if (text === '.') {
-        result = '.';
-    } else if (isDot > 0) {
-        text = text.replace('.', '');
-        result = invert(text) + '.';
-    }
+
+    text = text.replace('.', '');
+    if (text.split(' ').length > 0 ) result = invert(text) + '.';
 
     if (result) {
         $('#text').val('');
         const div = $('div');
-        $('#result').append(`<div>${source}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;${result}</div>`);
+        $('#result').append(`<div>${source}<span class="px-5">|</span>${result}</div>`);
         $('#result div:last').hide().fadeIn();
     }
     else $('#result').append(`<div class="text-danger">${source}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;format invalide...</div>`);
