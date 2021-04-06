@@ -12,6 +12,7 @@ function start() {
     let result;
     if (text === '.') {
         result = '.';
+        $('#text').val('');
     } else if (isDot > 0) {
         text = text.replace('.', '');
         result = inverser(text) + '.';
