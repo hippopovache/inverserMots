@@ -24,7 +24,7 @@ function start() {
         $('#result').append(`<div>${source}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;${result}</div>`);
         $('#result div:last').hide().fadeIn();
     }
-    else $('#error').hide().html('format invalide...').fadeIn();
+    else $('#result').append(`<div class="text-danger">${source}&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;format invalide...</div>`);
 }
 
 $(document).ready(function() {
